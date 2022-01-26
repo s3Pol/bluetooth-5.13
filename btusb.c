@@ -81,7 +81,6 @@ static const struct usb_device_id btusb_table[] = {
 	{ USB_DEVICE(0x0e8d, 0x763f) },
 	{ USB_DEVICE(0x0489, 0xe080) },
 
-
 	/* Broadcom SoftSailing reporting vendor specific */
 	{ USB_DEVICE(0x0a5c, 0x21e1) },
 
@@ -137,7 +136,9 @@ static const struct usb_device_id btusb_table[] = {
 	  .driver_info = BTUSB_BCM_PATCHRAM },
 
 	/* Foxconn - Hon Hai */
-	
+	{ USB_VENDOR_AND_INTERFACE_INFO(0x0489, 0xff, 0x01, 0x01),
+	  .driver_info = BTUSB_BCM_PATCHRAM },
+
 	/* Lite-On Technology - Broadcom based */
 	{ USB_VENDOR_AND_INTERFACE_INFO(0x04ca, 0xff, 0x01, 0x01),
 	  .driver_info = BTUSB_BCM_PATCHRAM },
@@ -403,7 +404,7 @@ static const struct usb_device_id blacklist_table[] = {
 	  .driver_info = BTUSB_REALTEK },
 
 	/* MediaTek Bluetooth devices */
-	{ USB_DEVICE(0x0489, 0xe080),
+	{ USB_VENDOR_AND_INTERFACE_INFO(0x0e8d, 0xe0, 0x01, 0x01),
 	  .driver_info = BTUSB_MEDIATEK |
 			 BTUSB_WIDEBAND_SPEECH |
 			 BTUSB_VALID_LE_STATES },
