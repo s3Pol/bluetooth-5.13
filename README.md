@@ -1,4 +1,4 @@
-# bluetooth-5.13
+# bluetooth-5.13 - TP-LINK UB500
 
 - Secure Boot needs to be disabled, check ``mokutil --sb-state``
 
